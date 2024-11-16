@@ -1,1 +1,54 @@
-body{background-color: #fff;}
+@use 'variaveis';
+@use 'hero';
+
+*, body, html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: variaveis.$corDeFundo;
+}
+
+@mixin text($fontSize: 16px){
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$corTextoPrincipal;
+}
+
+@mixin title($fontSize: 40px){
+    @include text(fontSize);
+    color: variaveis.$corTextoSecundario;
+}
+
+.text___big{
+    @include text(18px)
+}
+
+.text {
+    @include text;
+}
+
+.text__small {
+    @include text(12px);
+}
+
+.link-text{ 
+    @include text(16px); //poderia ter posto o mixin title e ajustado apenas o fontSize
+    color: variaveis.$corTextoSecundario;
+    text-decoration: underline;
+}
+
+.title__big{
+    @include title(44px);
+}
+
+.title {
+    @include title;
+}
+
+.title__small {
+    @include title(28px);
+}
