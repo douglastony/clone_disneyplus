@@ -10,6 +10,16 @@
         justify-content: space-around;
         margin-top: 50px;
 
+        @media (max-width: 768px) {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button{
+            margin-top: 24px;
+        }
+
         
         &__item{
             text-align: center;
